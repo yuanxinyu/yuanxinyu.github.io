@@ -10,7 +10,7 @@ node [shape=box, fontname="FangSong"];
 
 node [shape=box, fontname="FangSong"];
 {
-	WebServer [label="Web Server"];
+	WebServer [label="Rack Web Server"];
 	RackApp [label="Rack App"];
 	
 }
