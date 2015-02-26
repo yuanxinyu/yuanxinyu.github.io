@@ -9,13 +9,13 @@ highlighter: pygments
 # so be sure to set them if your theme uses them.
 #
 title : 袁新宇的技术博客
-tagline: Site Tagline
+tagline: 
 author :
   name : Yuan Xinyu
   email : yuan_xin_yu@hotmail.com
   github : yuanxinyu
   twitter : topcodewriter
-  feedburner : yuanxinyu
+  feedburner : 
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 
@@ -80,7 +80,7 @@ JB :
   # Set 'provider' to false to turn commenting off globally.
   #
   comments :
-    provider : disqus
+    provider : false
     disqus :
       short_name : jekyllbootstrap
     livefyre :
@@ -98,7 +98,7 @@ JB :
   # Set 'provider' to false to turn analytics off globally.
   #        
   analytics :
-    provider : google 
+    provider : false 
     google : 
         tracking_id : 'UA-123-12'
     getclicky :
