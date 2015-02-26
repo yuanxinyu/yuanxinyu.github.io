@@ -1,0 +1,24 @@
+
+digraph G {
+rankdir=LR
+edge [fontname="FangSong"];
+
+node [shape=box, fontname="FangSong"];
+{
+	WebClient [label="Web Client"];
+}
+
+node [shape=box, fontname="FangSong"];
+{
+	WebServer [label="Web Server"];
+	RackApp [label="Rack App"];
+	
+}
+
+WebClient ->WebServer [label="Http Request"];
+WebServer ->WebClient [label="Http Response"];
+
+WebServer ->RackApp [label="ruby方法调用，参数env是一个hash"];
+RackApp ->WebServer [label="方法输出，包含三个对象的数组"];
+
+}

@@ -1,0 +1,19 @@
+
+digraph G {
+rankdir=LR
+edge [fontname="FangSong"];
+
+node [shape=box, fontname="FangSong"];
+{
+	WebClient [label="Web Client"];
+}
+
+node [shape=box, fontname="FangSong"];
+{
+	WebServer [label="Web Server"];
+}
+
+WebClient ->WebServer [label="Http Request"];
+WebServer ->WebClient [label="Http Response"];
+
+}
