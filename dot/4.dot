@@ -1,0 +1,33 @@
+digraph G {      
+	edge [fontname="FangSong"];
+
+    node[shape=record]      
+    {rank=same;CLI;Runner}  
+    CLI[label="{PUMA::CLI| +runner : Runner\l| +run()\l}"]
+	node [shape=box, fontname="FangSong"];   
+	docs[  
+      style="filled", color="gold", label="策略模式接口： run()"  
+    ]   
+    edge [ arrowhead="none", style="dashed"]  
+    node[shape=record]
+    CLI->docs  
+
+    Runner[ label="{Runner|+cli : CLI\l|+options : Options\l|+app : RackApp\l|+control : ControlCLI\l|+run()\l}"]      
+    Single[label="{Single|server:Server\l|+run()\l}"]      
+    Cluster[label="{Cluster|wokers:Worker\l|+run()\l}"]      
+        
+    edge[  arrowhead="odiamond", style="filled"]  
+    Runner -> CLI    
+  
+    edge[ arrowhead="onormal", style="filled"]  
+    {rank=same;Single;Cluster;docs}  
+    Single->Runner     
+    Cluster->Runner    
+	
+    {rank=max;Server}  
+	edge[  arrowhead="odiamond", style="filled"]  
+    Server[label="{Server|thread_pool:ThreadPool\l|reactor:Reactor\l|+run()\l}"]     
+    Server->Single    
+	 
+	
+}  

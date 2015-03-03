@@ -1,0 +1,28 @@
+
+digraph G {
+rankdir=LR
+edge [fontname="FangSong"];
+
+node [shape=plaintext, fontname="FangSong"];
+{
+	PumaBin [label="启动/bin/puma"];
+}
+
+node [shape=box, fontname="FangSong"];
+{
+	Init [label="初始化"];
+	Options [label="命令行参数解析"];
+	Rack [label="设置rack环境"];
+	Cluster [label="判断集群模式,设置runner"];
+	Signal [label="设置操作系统信号的处理函数"];
+	Title [label="设置puma进程标题"];
+	State [label="更新puam的状态为:run"];
+	Run [label="执行runner.run，进行puma主循环"];
+	Wait [label="此时puma服务器可以接收client的请求了，同时等待操作系统的退出信号"];
+	Exit [label="执行相应的退出操作"];
+}
+
+Init ->Options [label="Http Request"];
+Options ->Rack [label="Http Response"];
+
+}
